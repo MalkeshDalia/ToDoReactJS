@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+/* To Do List */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* background-color: #d2dbdd; */
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.main_div {
+  width: 100%;
+  height: 100vh;
+  background: #6983aa;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.center_div {
+  width: 25%;
+  height: 80vh;
+  background-color: #f4f4f4;
+  box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+
+h1 {
+  color: white;
+  background: transparent;
+  /* text-shadow: 0 2px 2px black; */
+  background-color: #8566aa;
+  padding: 6px 0 2px 0;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+input {
+  text-align: center;
+  height: 30px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 500;
+  width: 60%;
+  border-bottom: 2px solid #8566aa;
+  outline: none;
+  border-radius: 15px;
+}
+
+button {
+  min-height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #8566aa;
+  color: #fff;
+  font-size: 40px;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background-color: #20bf6b;
+}
+
+ol {
+  margin-top: 30px;
+}
+
+ol li {
+  padding-left: 0px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  color: #8566aa;
+  text-transform: capitalize;
+}
+
+.todo_style {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.todo_style .fa_times {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8566aa;
+  border-radius: 50%;
+  margin: 0 15px 0 35px;
+  color: aliceblue;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.todo_style .fa_times:hover {
+  background-color: crimson;
+}
+
+.todo_style .fa_times:hover .list_style {
+  background-color: crimson;
+}
+
+@media (max-width: 768px) {
+  .center_div: {
+    width: 55%;
+  }
+
+  .todo_style .fa_items {
+    margin: 0 15px 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button {
+    margin-left: 5px;
+    min-height: 40px;
+    width: 40px;
+    color: #fff;
+    font-size: 30px;
+  }
+}
+/* div {
+  width: 100%;
+  height: 100vh;
+  background: #8e44ad;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* form {
+  width: 50%;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  margin: 20px 0;
+  text-align: center;
+  border-radius: 5px;
+} */
