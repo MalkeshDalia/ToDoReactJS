@@ -107,6 +107,19 @@ ol li {
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
+.fa_edit {
+  font-size: 10px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #249bca;
+  border-radius: 50%;
+  margin: 0 15px 0 35px;
+  color: aliceblue;
+}
+
 .todo_style .fa_times:hover {
   background-color: crimson;
 }

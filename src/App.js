@@ -5,8 +5,13 @@ const App = () => {
   const [todoList, setTodolist] = useState("");
   const [todo, setTodo] = useState([]);
 
+  const [textValid, setTextValid] = useState(true);
+
   const inputEvent = (e) => {
-    setTodolist(e.target.value);
+    if (e.target.value.trim()) {
+      setTextValid(false);
+      setTodolist(e.target.value);
+    }
   };
 
   const listOfItems = () => {
@@ -21,9 +26,24 @@ const App = () => {
   const deleteItems = (id) => {
     console.log("clicked");
 
-    setTodo((oldItems) => {
-      return oldItems.filter((arrElements, index) => {
+    setTodo((preValue) => {
+      return preValue.filter((arrElements, index) => {
+        console.log(index, "!==", id, " -> ", index !== id);
         return index !== id;
+      });
+    });
+  };
+
+  // Update Part
+  const editItems = (id, newName) => {
+    setTodo((allItems) => {
+      return allItems.map((todoName, index) => {
+        console.log(index, id);
+        if (index === id) {
+          return newName;
+        } else {
+          return todoName;
+        }
       });
     });
   };
@@ -41,18 +61,20 @@ const App = () => {
             onChange={inputEvent}
             value={todoList}
           />
-          <button onClick={listOfItems}> + </button>
+          <button onClick={listOfItems} disabled={textValid}></button>
 
           <ol>
             {/* <li> {todo} </li> */}
             {todo.map((itemval, index) => {
               // Rendering every array values in list
+              console.log("[", index, "] => ", itemval);
               return (
                 <ToDoList
                   key={index}
                   id={index}
                   item={itemval}
                   onSelect={deleteItems}
+                  onEdit={editItems}
                 />
               );
             })}
